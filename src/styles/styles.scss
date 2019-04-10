@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$colorDark: #333;
+
+/* mixins */ 
+@mixin mainSection($paddingTop, $paddingBottom, $border) {
+    padding-top: $paddingTop;
+    padding-bottom: $paddingBottom;
+    @if $border {
+        border-bottom: 1px solid #000;
+    }
+}
+
+@mixin titleMixin($size, $color, $transform, $align, $style) {
+
+    @if $size {
+        font-size: $size;
+    }
+    @if $color {
+        color: $color;
+    }
+    @if $transform {
+        text-transform: $transform;
+    }
+    @if $align {
+        text-align: $align;
+    }
+    @if $style {
+        font-style: $style;
+    }
+  }
+
+/* scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+.container {
+  display: flex;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Header {
+  @include mainSection(23px, 310px, false);
+  @include titleMixin(false, #fff, false, center,false);
+  width: 100%;
+  background-image: url("https://raw.githubusercontent.com/olegobiukh/other/master/projects-general/img/gl/bg.png");
+  background-size: cover;
+  
+  &__title {
+    @include titleMixin(3.9em, false, uppercase, false, false);
+    margin-top: 164px;
+    font-family: 'Times New Roman', serif;
+  }
+
+  &__subtitle {
+    @include titleMixin(1.9em, false, uppercase, false, italic);
+    margin-top: 23px;
+  }
+}
+
+.Navigation {
+  justify-content: space-between;
+  width: 83%;
+  margin: 0 5%;
+
+  &__logo {
+    font-size: 1.8em;
+    font-family: Tahoma;
+  }
+
+  &__list {
+    justify-content: space-between;
+    width: 322px;
+    padding-top: 6px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  &__item {
+    border-bottom: 2px solid transparent;
+    padding: 0 13px 13px;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      border-color: #fff;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+  .burger {
+    display: none;
+  }
+
+/* About */  
+
+.About {
+  @include mainSection(55px, 58px, true);
+
+  &__title {
+    @include titleMixin(2em, false, uppercase, center, false);
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    @include titleMixin(1.2em, false, false, false, italic)
+  }
+
+  &__text {
+    margin-top: 14px;
+  }
+
+  &__container {
+    justify-content: space-between;
+    width: 768px;
+    margin: 0 auto;
+    padding-top: 29px;
+  }
+
+  &__box {
+    padding: 0 20px;  
+    font-size: 1.1em;
+    letter-spacing: 0px;
+    word-spacing: 0.8px;
+    
+      &-left {
+      text-align: right;
+    }
+    
+  }
+
+  &__box-img {
+    padding-top: 45px;
+  }
+}
+
+/* Skills */
+
+.Skills {
+  width: 100%;
+  @include mainSection(30px, 80px, true);
+
+  &__title {
+    @include titleMixin(2em, false, uppercase, center, false)
+  }
+
+  &__wrapper {
+    flex-direction: column;
+    width: 530px;
+    margin: 0 auto;
+    margin-top: 26px;
+  }
+}
+
+.Skill {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 13px;
+    font-size: 2em;
+    letter-spacing: 0.8px;
+
+    &__name {
+      width: 160px;
+      text-align: right;
+    }
+
+    &__level {
+      justify-content: space-between;
+      width: 285px;
+      margin-top: 7px;
+    }
+
+    &__dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+
+      &-grey {
+        background-color: #a3a3a3;
+      }
+    
+      &-dark {
+        background-color: $colorDark;
+      }
+    }
+}
+
+.Contact {
+  @include mainSection(19px, 93px, false);
+
+  &__title {
+   @include titleMixin(2em, false, uppercase, center, false)
+  }
+
+  &__name {
+    margin-top: 26px;
+  }
+
+  &__subname {
+    margin-top: 12px;
+    color: #888;
+  }
+
+  &__container {
+    justify-content: space-between;
+    width: 710px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  &__form {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 440px;
+    padding-top: 23px;
+    color: #838181;
+  }
+
+  &__item {
+    margin-top: 17px; 
+    width: 100%;
+    padding: 10px 6px;
+    font-size: 1em;
+  }
+  
+  &__message {
+    font-size: 1.4em;
+    word-spacing: -7px;
+    margin-top: 26px;
+    resize: none;
+  }
+
+  &__btn {
+    @include titleMixin(1em, #fff, uppercase, false, false);
+    width: 167px;
+    margin: 0 auto;
+    margin-top: 27px;
+    border: none;
+    padding: 5px;
+    background-color: $colorDark;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #212020;
+    }
+  }
+
+  &__box {
+    margin-top: 10px;
+  }
+  
+}
+
+/* Footer */
+.Footer {
+  width: 100%;
+  @include mainSection(36px, 70px, false);
+  background-color: $colorDark;
+  color: #fff;  
+
+  &__container {
+    justify-content: space-between;
+    width: 66%;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+
+  &__box {
+    margin-top: 7px;
+  }
+
+  &__subname {
+    margin-left: 16px;
+  }
+
+  &__logo {
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-family: Tahoma;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  
+   .burger-icon {
+    position: fixed;
+    top: 29px;
+    right: 40px;
+    display: block;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 20;
+  }
+
+  body input + label {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    height: 20px;
+    width: 15px;
+    z-index: 5;
+  }
+
+  body input + label span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    margin-top: -1px;
+    left: 0;
+    display: block;
+    background: #fff;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  }
+
+  body input + label span:first-child {
+    top: 3px;
+  }
+
+  body input + label span:last-child {
+    top: 16px;
+  }
+
+  body label:hover {
+    cursor: pointer;
+  }
+
+  body input:checked + label span {
+    opacity: 0;
+    top: 50%;
+  }
+
+  body input:checked + label span:first-child {
+    opacity: 1;
+    transform: rotate(405deg);
+  }
+
+  body input:checked + label span:last-child {
+    opacity: 1;
+    transform: rotate(-405deg);
+  }
+
+
+
+   @keyframes menu-show {
+    from {
+      right: -300px;
+    }
+    to {
+      right: 0;
+    }
+  }
+
+  .Navigation__list {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 300px;
+      height: 100vh;
+      padding-top: 42px;
+      padding-left: 20px;
+      background-color: rgba(70, 69, 69, 0.9);
+      color: $colorDark;
+      animation: menu-hide linear 0.3s;
+      z-index: 3;
+    }
+
+  .Navigation {
+    &__item {
+      width: 80%;
+      border-bottom: none;
+      text-align: left;
+    }
+
+    &__link {
+      @include titleMixin(2em, #fff, uppercase, false, false); 
+      font-weight: normal;
+    }
+
+    &__link:hover {
+      color: #e06969;
+    }
+  }
+
+  input[type="checkbox"]:checked ~ .Navigation__list {    
+      position: fixed;
+      top: 0;
+      right: 0;
+      animation: menu-show linear 0.5s;    
+  }
+
+  @keyframes menu-hide {
+    from {
+      right: 0;
+    }
+    to {
+      right: -300px;
+    }
+  }
+
+  .About {
+
+    &__container {
+      position: relative;
+      width: 90%;
+    }
+
+    &__box-img {
+      position: absolute;
+      padding-top: 0;
+      top: 74px;
+      left: 50%;
+      margin-left: -90px;
+      opacity: 0.3;
+    }
+
+    &__subtitle {
+      text-align: center;
+    }
+
+    &__text {
+      text-align: left;
+    }
+  
+  }
+
+  .Contact {
+    &__container {
+      width: 440px;
+    }
+
+    &__form {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    &__info {
+      display: none;
+    }
+  }
+
+  .Footer__container {
+    width: 90%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .Header {
+    &__title {
+      font-size: 3em;
+    }
+
+    &__subtitle {
+      font-size: 1.4em;
+    }
+  }
+
+  .About {
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &__box {
+      margin-top: 35px;
+    }
+
+    &__subtitle {
+      text-align: left;
+    }
+
+    &__box-img {
+      display: none;
+    }
+  }
+
+  .Skills__wrapper {
+    width: 90%;
+  }
+
+  .Skill {
+  
+    &__level {
+      width: 60%;
+    }
+
+    &__name {
+      width: 40%;
+      text-align: left;
+      font-size: 0.8em;
+    }
+    
+    &__dot {
+      width: 15px;
+      height: 15px;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .Contact__container {
+    width: 90%;
+  }
+
+}
+
+@media only screen and (max-width: 425px) {
+
+  .Header {
+    padding-bottom: 240px;
+
+    &__title,
+    &__subtitle {
+      font-size: 2.3em;
+    }
+
+    &__subtitle {
+      font-size: 1.3em;
+    }
+  }
+
+  .Skill__name {
+    font-size: 0.6em;
+  }
+
+  .Footer__logo {
+    display: none;
+  }
+}
