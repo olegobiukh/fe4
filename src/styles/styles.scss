@@ -104,7 +104,17 @@ body {
     color: #fff;
     text-decoration: none;
   }
+
 }
+
+.Navigation__top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin-left: 0;
+    padding: 13px 12% 8px 5%; 
+    background-color: rgba(0,0,0,0.6);
+  }
 
   .burger {
     display: none;
@@ -121,7 +131,7 @@ body {
 
   &__subtitle {
     font-weight: bold;
-    @include titleMixin(1.2em, false, false, false, italic)
+    @include titleMixin(1.2em, false, false, false, italic);
   }
 
   &__text {
