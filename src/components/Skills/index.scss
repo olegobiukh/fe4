@@ -1,0 +1,83 @@
+@import "../../styles/styles.scss";
+
+.skills {
+  width: 100%;
+  @include mainSection(30px, 80px, true);
+
+  &__title {
+    @include titleMixin(2em, false, uppercase, center, false)
+  }
+
+  &__wrapper {
+    flex-direction: column;
+    width: 530px;
+    margin: 0 auto;
+    margin-top: 26px;
+  }
+}
+
+.skill {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 13px;
+    font-size: 2em;
+    letter-spacing: 0.8px;
+
+    &__name {
+      width: 160px;
+      text-align: right;
+    }
+
+    &__level {
+      justify-content: space-between;
+      width: 285px;
+      margin-top: 7px;
+    }
+
+    &__dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+
+      &-grey {
+        background-color: #a3a3a3;
+      }
+    
+      &-dark {
+        background-color: $colorDark;
+      }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .skills__wrapper {
+    width: 90%;
+  }
+
+  .skill {
+  
+    &__level {
+      width: 60%;
+    }
+
+    &__name {
+      width: 40%;
+      text-align: left;
+      font-size: 0.8em;
+    }
+    
+    &__dot {
+      width: 15px;
+      height: 15px;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+  .skill__name {
+    font-size: 0.6em;
+  }
+}

@@ -1,0 +1,93 @@
+@import "../../styles/styles.scss";
+
+.contact {
+  @include mainSection(19px, 93px, false);
+
+  &__title {
+   @include titleMixin(2em, false, uppercase, center, false)
+  }
+
+  &__name {
+    margin-top: 26px;
+  }
+
+  &__subname {
+    margin-top: 12px;
+    color: #888;
+  }
+
+  &__container {
+    justify-content: space-between;
+    width: 710px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  &__form {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 440px;
+    padding-top: 23px;
+    color: #838181;
+  }
+
+  &__item {
+    margin-top: 17px; 
+    width: 100%;
+    padding: 10px 6px;
+    font-size: 1em;
+  }
+  
+  &__message {
+    font-size: 1.4em;
+    word-spacing: -7px;
+    margin-top: 26px;
+    resize: none;
+  }
+
+  &__btn {
+    @include titleMixin(1em, #fff, uppercase, false, false);
+    width: 167px;
+    margin: 0 auto;
+    margin-top: 27px;
+    border: none;
+    padding: 5px;
+    background-color: $colorDark;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #212020;
+    }
+  }
+
+  &__box {
+    margin-top: 10px;
+  }
+  
+}
+
+@media only screen and (max-width: 768px) {
+
+  .contact {
+    &__container {
+      width: 440px;
+    }
+
+    &__form {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    &__info {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .contact__container {
+    width: 90%;
+  }
+
+}

@@ -1,0 +1,84 @@
+@import "../../styles/styles.scss";
+/* about */  
+
+.about {
+  @include mainSection(55px, 58px, true);
+
+  &__title {
+    @include titleMixin(2em, false, uppercase, center, false);
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    @include titleMixin(1.2em, false, false, false, italic);
+  }
+
+  &__text {
+    margin-top: 14px;
+  }
+
+  &__container {
+    justify-content: space-between;
+    width: 768px;
+    margin: 0 auto;
+    padding-top: 29px;
+    line-height: 1.2;
+  }
+
+  &__box {
+    padding: 0 20px;  
+    font-size: 1.1em;
+    letter-spacing: 0px;
+    word-spacing: 0.8px;
+    
+      &-left {
+      text-align: right;
+    }
+    
+  }
+
+  &__box-img {
+    padding-top: 45px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .about {
+
+    &__container {
+      width: 90%;
+    }
+
+    &__box-img {
+      display: none;
+    }
+
+    &__subtitle {
+      text-align: center;
+    }
+
+    &__text {
+      text-align: left;
+    }
+  
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .about {
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &__box {
+      margin-top: 35px;
+    }
+
+    &__subtitle {
+      text-align: left;
+    }
+  }
+}
