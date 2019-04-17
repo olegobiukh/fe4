@@ -8,15 +8,15 @@ function Footer() {
         <div className="footer__info">
           <p className="footer__box">
             <span className="footer__name">Mobile:</span>
-            <span className="footer__subname">+38066-66-66-666</span>
+            <span className="footer__subname">+38099-53-13-954</span>
           </p>
           <p className="footer__box">
             <span className="footer__name">Email:</span>
-            <span className="footer__subname">mail@gmail.com</span>
+            <span className="footer__subname">oleg.obiukh@gmail.com</span>
           </p>
           <p className="footer__box">
             <span className="footer__name">Skype</span>
-            <span className="footer__subname">mySkypeAcc</span>
+            <span className="footer__subname">OlegObiukh</span>
           </p>
         </div>
         <span className="footer__logo">&lt;/&gt;</span>

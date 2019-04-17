@@ -12,13 +12,11 @@ function About() {
         <div className="about__box about__box-left">
           <h2 className="about__subtitle">Goals</h2>
           <p className="about__text">
-            Lorem ipsum dolor sit amet, ac erat dolor quisque magna consectetur
-            leo, pede nec phasellus praesent adipiscing. Nullam diam magna at
-            mauris amet, non ut urna a commodo. Donec vivamus semper nisi velit,
-            proin id turpis, vehicula amet nullam convallis adipiscing ut sit,
-            sit viverra. Duis interdum eu eu sodales nec ut, non nibh accumsan
-            eleifend. Purus ut vitae sapien dui duis dolores, porttitor tempus
-            nascetur id ut, integer ut dignissim harum.
+            My goal is to increase my proficiency in the skills I currently
+            have, learn new and gain experience in order to become an
+            outstanding in what I do and provide great service to my clients and
+            their customers. Also, have a huge desire to master JavaScript and
+            React.js, because I love to use these technologies.
           </p>
         </div>
         <div className="about__box-img">
@@ -27,13 +25,11 @@ function About() {
         <div className="about__box">
           <h2 className="about__subtitle">Dreams</h2>
           <p className="about__text">
-            Lorem ipsum dolor sit amet, ac erat dolor quisque magna consectetur
-            leo, pede nec phasellus praesent adipiscing. Nullam diam magna at
-            mauris amet, non ut urna a commodo. Donec vivamus semper nisi velit,
-            proin id turpis, vehicula amet nullam convallis adipiscing ut sit,
-            sit viverra. Duis interdum eu eu sodales nec ut, non nibh accumsan
-            eleifend. Purus ut vitae sapien dui duis dolores, porttitor tempus
-            nascetur id ut, integer ut dignissim harum.
+            My dream is to make web more comfortable place for customer use. I
+            know some people, who make quality product and sure, there is not a
+            few of them. I wanna help them to sell their product by making web
+            applications, which will be as connections between a service
+            provider and customers.
           </p>
         </div>
       </div>
