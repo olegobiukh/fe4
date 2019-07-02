@@ -1,0 +1,239 @@
+@import "../../styles/styles.scss";
+
+.header {
+  @include mainSection(23px, 310px, false);
+  @include titleMixin(false, #fff, false, center,false);
+  width: 100%;
+  background-image: url("https://raw.githubusercontent.com/olegobiukh/other/master/projects-general/img/gl/bg.png");
+  background-size: cover;
+  
+  &__title {
+    @include titleMixin(3.9em, false, uppercase, false, false);
+    margin-top: 164px;
+    font-family: 'Times New Roman', serif;
+  }
+
+  &__subtitle {
+    @include titleMixin(1.9em, false, uppercase, false, italic);
+    margin-top: 23px;
+  }
+}
+
+.navigation {
+  justify-content: space-between;
+  width: 83%;
+  margin: 0 5%;
+
+  &__logo {
+    font-size: 1.8em;
+    font-family: Tahoma;
+  }
+
+  &__list {
+    justify-content: space-between;
+    width: 322px;
+    padding-top: 6px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  &__item {
+    border-bottom: 2px solid transparent;
+    padding: 0 13px 13px;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      border-color: #fff;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+  }
+
+}
+
+.navigation__top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin-left: 0;
+    padding: 13px 12% 8px 5%; 
+    background-color: rgba(0,0,0,0.6);
+  }
+
+  .burger {
+    display: none;
+  }
+
+@media only screen and (max-width: 768px) {
+  
+.burger-icon {
+    position: fixed;
+    top: 29px;
+    right: 40px;
+    display: block;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 20;
+  }
+
+  body input + label {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    height: 20px;
+    width: 15px;
+    z-index: 5;
+  }
+
+  body input + label span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    margin-top: -1px;
+    left: 0;
+    display: block;
+    background: #fff;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  }
+
+  body input + label span:first-child {
+    top: 3px;
+  }
+
+  body input + label span:last-child {
+    top: 16px;
+  }
+
+  body label:hover {
+    cursor: pointer;
+  }
+
+  body input:checked + label span {
+    opacity: 0;
+    top: 50%;
+  }
+
+  body input:checked + label span:first-child {
+    opacity: 1;
+    transform: rotate(405deg);
+  }
+
+  body input:checked + label span:last-child {
+    opacity: 1;
+    transform: rotate(-405deg);
+  }
+
+
+
+   @keyframes menu-show {
+    from {
+      right: -300px;
+    }
+    to {
+      right: 0;
+    }
+  }
+
+  .navigation__list {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 300px;
+      height: 100vh;
+      padding-top: 42px;
+      padding-left: 20px;
+      background-color: rgba(70, 69, 69, 0.9);
+      color: $colorDark;
+      animation: menu-hide linear 0.3s;
+      z-index: 3;
+    }
+
+  .navigation {
+    &__item {
+      width: 80%;
+      border-bottom: none;
+      text-align: left;
+    }
+
+    &__link {
+      @include titleMixin(2em, #fff, uppercase, false, false); 
+      font-weight: normal;
+    }
+
+    &__link:hover {
+      color: #e06969;
+    }
+  }
+
+  input[type="checkbox"]:checked ~ .navigation__list {    
+      position: fixed;
+      top: 0;
+      right: 0;
+      animation: menu-show linear 0.5s;    
+  }
+
+  @keyframes menu-hide {
+    from {
+      right: 0;
+    }
+    to {
+      right: -300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .header {
+    &__title {
+      font-size: 3em;
+    }
+
+    &__subtitle {
+      font-size: 1.4em;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+  .header {
+    padding-bottom: 240px;
+
+    &__title,
+    &__subtitle {
+      font-size: 2.3em;
+    }
+
+    &__subtitle {
+      font-size: 1.3em;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  

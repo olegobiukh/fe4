@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$colorDark: #333;
+
+/* mixins */ 
+@mixin mainSection($paddingTop, $paddingBottom, $border) {
+    padding-top: $paddingTop;
+    padding-bottom: $paddingBottom;
+    @if $border {
+        border-bottom: 1px solid #000;
+    }
+}
+
+@mixin titleMixin($size, $color, $transform, $align, $style) {
+
+    @if $size {
+        font-size: $size;
+    }
+    @if $color {
+        color: $color;
+    }
+    @if $transform {
+        text-transform: $transform;
+    }
+    @if $align {
+        text-align: $align;
+    }
+    @if $style {
+        font-style: $style;
+    }
+  }
+
+/* scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+.container {
+  display: flex;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
